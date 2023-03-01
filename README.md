@@ -2,7 +2,7 @@ This will be a guide to setup and configure Misskey to run within Docker, this s
 
 Now depending on what OS you use will decide how you go about setting up Docker, Linux you will need to install Docker and docker-compose, Windows and MacOS should include docker-compose with Docker Desktop.
 
-Now you will need to download the files listed in this repo, these files shoudl be out of the box ready to go. 
+Now you will need to download the files listed in this repo, these files should be out of the box ready to go. 
 
 There are some changes you need to be aware of, there is a single docker-compose.yaml that won't need to be changed, there are two Dockerfiles, one in postgresql and misskey both of these are using alpine to run you'll notice in postgresql it is using the tag "alpine" while misskey is using "alpine:20221110" this tag refers to the very latest version of alpine and is sometimes needed by misskey to have the most recent packages available. 
 
