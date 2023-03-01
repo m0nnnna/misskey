@@ -1,0 +1,2 @@
+00 01 * * * bash /backup.sh 
+#00 04 * * 7 su postgres -s $SHELL -lc "psql -d misskey -c 'vacuum(full,analyse,verbose);'"

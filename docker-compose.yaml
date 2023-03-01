@@ -1,0 +1,38 @@
+version: '3'
+services:  
+  postgresql:
+    build: ./postgresql
+    restart: "always"
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - ./saves:/saves
+    networks:
+      - misskey
+    privileged: true
+
+  misskey:
+    build: ./misskey
+    restart: "always"
+    volumes:
+      - ./files:/opt/misskey/files
+      - ./backup:/backup
+    dns:
+      - 1.1.1.1
+    ports:
+      - "443:443"
+    networks:
+        - misskey
+    environment:
+      ENDPOINT: "YOUR URL HERE"
+      DATABASE_HOST: "postgresql"
+      DB_USERNAME: "root"
+      DB_NAME: "misskey"
+      DB_PASSWORD: "sql" 
+
+networks:
+  misskey:
+   
+volumes:
+  postgresql:
+    external: false
+    
