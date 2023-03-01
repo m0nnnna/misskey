@@ -17,3 +17,5 @@ For this configuration a cloudflare account is needed, so set your domain up in 
 Misskey will generate its own certs no need for certs at all with this setup.
 
 You should be ready to setup your admin account and call it a day.
+
+When a new version of misskey is released you will need to run again the same two commands "docker-compose build --no-cache" and "docker-compose up -d" this will build the latest version, make sure to take note during the first run of the containers to check and see if they are complaining about needing X version of installed software, you will need to adjust your alpine linux version in the Dockerfile.
