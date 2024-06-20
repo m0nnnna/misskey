@@ -2,11 +2,11 @@ This will be a guide to setup and configure Misskey to run within Docker, this s
 
 Now depending on what OS you use will decide how you go about setting up Docker, Linux you will need to install Docker and docker-compose, Windows and MacOS should include docker-compose with Docker Desktop.
 
-Now you will need to download the files listed in this repo, these files should be out of the box ready to go. 
+Now you will need to download the files listed in this repo.
 
-There are some changes you need to be aware of, there is a single docker-compose.yaml that will have ENDPOINT put your domain name there, there are two Dockerfiles, one in postgresql and misskey both of these are using alpine to run you'll notice in postgresql it is using the tag "alpine" while misskey is using "alpine:20221110" this tag refers to the very latest version of alpine and is sometimes needed by misskey to have the most recent packages available. 
+There are some changes you need to be aware of, there is a single docker-compose.yaml that will have ENDPOINT put your domain name there.
 
-Simply toss these files into a folder I'm using Windows and have it set as "C:\DIRECTORY\WORKINGDIRECTORY" just a simple place you can locate the files. 
+Simply toss these files into a folder I'm using Windows and have it set as "C:\DIRECTORY\WORKINGDIRECTORY" just a simple place you can locate the files. Also create two folders "files" "saves" in the main directory.
 
 Now open your terminal/powershell/cmd cd into your directory and run "docker-compose build --no-cache" this will force a clean rebuild of the setup. 
 
